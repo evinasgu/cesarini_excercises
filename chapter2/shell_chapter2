@@ -1,0 +1,101 @@
+Erlang/OTP 21 [erts-10.2.4] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-threads:1]
+
+Eshell V10.2.4  (abort with ^G)
+1> 1 + 1.
+1 + 1.
+2
+2> [1|[2|[3|[]]]].
+[1|[2|[3|[]]]].
+[1,2,3]
+3> A = 1.
+A = 1.
+1
+4> B = 2.
+B = 2.
+2
+5> A + B.
+A + B.
+3
+6> A = A + 1.
+A = A + 1.
+** exception error: no match of right hand side value 2
+7> [[3, 2]|1].
+[[3, 2]|1].
+[[3,2]|1]
+8> L = [A | [2, 3]].
+L = [A | [2, 3]].
+[1,2,3]
+9> [H|T] = L.
+[H|T] = L.
+[1,2,3]
+10> H.
+H.
+1
+11> T. 
+T. 
+[2,3]
+12> 
+12> B = 2.
+B = 2.
+2
+13> B = 2.
+B = 2.
+2
+14> 2 = B.
+2 = B.
+2
+15> B = C.
+B = C.
+* 1: variable 'C' is unbound
+16> C = B.
+C = B.
+2
+17> B = C. 
+B = C. 
+2
+18> 
+18> Person = {person, "Mike", "Williams", [1, 2, 3, 4]}.
+Person = {person, "Mike", "Williams", [1, 2, 3, 4]}.
+{person,"Mike","Williams",[1,2,3,4]}
+19> {person, Name, Surname, Phone} = Person.
+{person, Name, Surname, Phone} = Person.
+{person,"Mike","Williams",[1,2,3,4]}
+20> Name.
+Name.
+"Mike"
+21> cd("/home/enyert/Documents/books/erlang/cesarini/cesarini_excercises").
+
+cd("/home/enyert/Documents/books/erlang/cesarini/cesarini_excercises").
+/home/enyert/Documents/books/erlang/cesarini/cesarini_excercises
+ok
+22> 
+22> c(demo).
+c(demo).
+{ok,demo}
+23> demo:times(3, 5).
+demo:times(3, 5).
+** exception error: undefined function demo:times/2
+24> double(6).
+double(6).
+** exception error: undefined shell command double/1
+25> c(shapes).
+c(shapes).
+shapes.erl:2: function area/2 undefined
+shapes.erl:2: function area/4 undefined
+shapes.erl:4: Warning: function area/1 is unused
+shapes.erl:11: Warning: variable 'Other' is unused
+error
+26> c(shapes).
+c(shapes).
+shapes.erl:11: Warning: variable 'Other' is unused
+{ok,shapes}
+27> shapes:area(2).
+shapes:area(2).
+{error,invalid_object}
+28> c(shapes).
+c(shapes).
+{ok,shapes}
+29> shapes:area(2).
+shapes:area(2).
+{error,invalid_object}
+30> 
