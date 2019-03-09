@@ -98,4 +98,56 @@ c(shapes).
 29> shapes:area(2).
 shapes:area(2).
 {error,invalid_object}
-30> 
+30> c(boolean).
+c(boolean).
+boolean.erl:17: head mismatch
+boolean.erl:26: head mismatch
+boolean.erl:2: function b_and/2 undefined
+boolean.erl:2: function b_or/2 undefined
+boolean.erl:30: function b_and/2 undefined
+error
+31> c(boolean).
+c(boolean).
+boolean.erl:26: Warning: variable 'Other2' is unused
+{ok,boolean}
+32> c(boolean).
+c(boolean).
+{ok,boolean}
+33> boolean:b_not(false).
+boolean:b_not(false).
+true
+34> boolean:b_not(true).
+boolean:b_not(true).
+false
+35> boolean:b_and(false, true).
+boolean:b_and(false, true).
+false
+36> boolean:b_and(true, true).
+boolean:b_and(true, true).
+true
+37> boolean:b_and(1, true).
+boolean:b_and(1, true).
+{error,invalid_input}
+38> boolean:b_or(false, true).
+boolean:b_or(false, true).
+true
+39> boolean:b_or(true, true).
+boolean:b_or(true, true).
+true
+40> boolean:b_or(false, false).
+boolean:b_or(false, false).
+false
+41> bool:b_and(bool:b_not(bool:b_and(true, false)), true)
+bool:b_and(bool:b_not(bool:b_and(true, false)), true)
+41> .
+.
+** exception error: undefined function bool:b_and/2
+42> bool:b_and(bool:b_not(bool:b_and(true, false)), true).
+bool:b_and(bool:b_not(bool:b_and(true, false)), true).
+** exception error: undefined function bool:b_and/2
+43> boolean:b_and(boolean:b_not(boolean:b_and(true, false)), true)
+boolean:b_and(boolean:b_not(boolean:b_and(true, false)), true)
+43> .
+.
+true
+44> 
